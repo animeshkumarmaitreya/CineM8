@@ -4,6 +4,7 @@ from streamlit_extras.stoggle import stoggle
 from processing import nlp
 from processing.makedb import Main
 import streamlit.components.v1 as components
+from streamlit_javascript import st_javascript
 
 st.set_page_config(
     page_title="A3S",
@@ -38,24 +39,24 @@ def main():
             """,
             height=150
         )
-        st.title("What Are You Looking For?")
+        st.title("What Are You Looking For? \n#### Get the best movie recommends powered with AI ! #### ")
         col1,col2,col3,col4,col5,col6=st.columns(6)
         with col1:
             if st.button("Recommend me a similar movie"):
-                st.session_state.user_menu = "Recommend me a similar movie"
+                st.session_state.user_menu = "Recommend me a Similar movie"
         with col2:
             if st.button("Describe me a movie"):
-                st.session_state.user_menu = "Describe me a movie"
+                st.session_state.user_menu = "About the selected Movie"
 
         if "user_menu" in st.session_state:
-           if st.session_state.user_menu == "Recommend me a similar movie":
+           if st.session_state.user_menu == "Recommend me a Similar Movie":
             recommend_display()
-           elif st.session_state.user_menu == "Describe me a movie":
+           elif st.session_state.user_menu == "About the selected Movie":
             display_movie_details()
         paging_movies()
     
     def recommend_display():
-        st.title('Movie Recommender System')
+        st.title('A3S')
         selected_movie_name = st.selectbox(
             'Select a Movie...', new_df['title'].values
         )
@@ -231,6 +232,7 @@ def main():
             )
 
     def paging_movies():
+        st.divider()
         max_pages=movies.shape[0]//10
         col1,col2,col3,col4,col5,col6=st.columns([1,1,5,2,1,1])
         with col1:
@@ -253,6 +255,7 @@ def main():
         display_all_movies(st.session_state['movie_number'])
 
     def display_all_movies(start):
+        st.divider()
         i=start
         with st.container():
             col1,col2,col3,col4,col5=st.columns(5)
