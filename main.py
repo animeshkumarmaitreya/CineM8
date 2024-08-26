@@ -43,15 +43,15 @@ def main():
         col1,col2,col3,col4,col5,col6=st.columns(6)
         with col1:
             if st.button("Recommend me a similar movie"):
-                st.session_state.user_menu = "Recommend me a Similar movie"
+                st.session_state.user_menu = "Recommend me a similar movie"
         with col2:
             if st.button("Describe me a movie"):
-                st.session_state.user_menu = "About the selected Movie"
+                st.session_state.user_menu = "Describe me a movie"
 
         if "user_menu" in st.session_state:
-           if st.session_state.user_menu == "Recommend me a Similar Movie":
+           if st.session_state.user_menu == "Recommend me a similar movie":
             recommend_display()
-           elif st.session_state.user_menu == "About the selected Movie":
+           elif st.session_state.user_menu == "Describe me a movie":
             display_movie_details()
         paging_movies()
     
