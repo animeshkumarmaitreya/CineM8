@@ -9,7 +9,7 @@ For the Frontend part: streamlit, a python framework to ease out component-wise 
 For Data Procesing: numpy, pandas
 For developing NLP: nltk, scikit-learn, pickle
 
-## Future Improvvements ##
+## Future Improvements ##
 With our NLP, if we can scrape the data on similar lines from social media websites (which we could not achieve during the hackathon), it can be of mass usage for businesses and can also be applied for building user personas.
 
 To run the code, in the project directory, run to install all dependencies:
